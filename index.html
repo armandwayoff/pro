@@ -44,10 +44,14 @@
           margin-bottom: 0rem;
         }
 
+        .titre {
+          line-height: normal;
+        }
+
         .reseaux {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
 
         .description {
@@ -55,13 +59,37 @@
           line-height: normal;
         }
 
-        .date {
+        .date, .date-exp {
           text-align: right;
+          direction: rtl;
+          color: var(--bs-secondary);
           line-height: normal;
+        }
+
+        .date-mois {
+          display: inline;
+          direction: rtl;
+        }
+
+        .nb-mois {
+          display: inline;
+          direction: ltr;
+        }
+
+        @media only screen and (max-width: 576px) {
+          .date {
+            text-align: left;
+          }
+          .date-exp {
+            text-align: left;
+            direction: ltr;
+          }
         }
 
         .lieu {
           text-align: right;
+          color: var(--bs-secondary);
+          line-height: normal;
         }
 
         .capitales {
@@ -106,14 +134,19 @@
   <h5>Expérience</h5>
   <div class="container">
     <div class="row">
-      <div class="col-1 date">
-        01/2025
-        09/2024
-        (5&nbsp;mois)
+      <div class="col-6 col-sm-1 order-1 order-sm-1 date-exp">
+        <div class="date-mois">
+          &nbsp;01/2025
+          09/2024
+        </div>
+        <div class="nb-mois"> 
+          (5&nbsp;mois)
+        </div>
       </div>
-      <div class="col-9">
-        <b>Stage de recherche (césure), <i>Institut für Numerische Simulation - Universität Bonn</i></b> 
-        <br>
+      <div class="col-12 col-sm-9 order-3 order-sm-2">
+        <div class="titre">
+          <b>Stage de recherche (césure), <i>Institut für Numerische Simulation - Universität Bonn</i></b> 
+        </div>
         <div class="description">
         <i>Superviseur:</i> <a href="https://ins.uni-bonn.de/staff/verfuerth" class="lien">Barbara <span class="capitales">Verfürth</span></a>
         <br>
@@ -123,19 +156,22 @@
             <a class="btn btn-outline-secondary btn-sm support" href="https://github.com/armandwayoff/Coefficient-Perturbations-in-Diffusion-Equations" role="button"><i class="bi bi-file-earmark-code"></i> code</a>
         </div>
       </div>
-      <div class="col-2 lieu">
+      <div class="col-6 col-sm-2 order-2 order-sm-3 lieu">
         Bonn, Allemagne
       </div>
     </div>
     <div class="row">
-      <div class="col-1 date">
-        08/2024
-        05/2024
-        (3&nbsp;mois)
+      <div class="col-6 col-sm-1 order-1 order-sm-1 date-exp">
+        <div class="date-mois">
+          &nbsp;08/2024
+          05/2024
+        </div>
+        <div class="nb-mois">(3&nbsp;mois)</div>
       </div>
-      <div class="col-9">
-        <b>Stage de recherche de Master 1, <i>Laboratoire <span class="capitales">POems</span></i> (<span class="capitales">umr</span> 7231 <span class="capitales">cnrs</span>-<span class="capitales">ensta</span>-Inria)</b> 
-        <br>
+      <div class="col-12 col-sm-9 order-3 order-sm-2">
+        <div class="titre">
+          <b>Stage de recherche de Master 1, <i>Laboratoire <span class="capitales">POems</span></i> (<span class="capitales">umr</span> 7231 <span class="capitales">cnrs</span>-<span class="capitales">ensta</span>-Inria)</b> 
+        </div>
         <div class="description">
         <i>Superviseurs:</i> <a href="https://uma.ensta-paris.fr/poems/members/show.html?id=214" class="lien">Maryna <span class="capitales">Kachanovska</span></a> et <a href="https://uma.ensta-paris.fr/poems/members/show.html?id=18" class="lien">Patrick <span class="capitales">Joly</span></a>
         <br>
@@ -144,7 +180,7 @@
         <a class="btn btn-outline-secondary btn-sm support" href="slides_pre.pdf" role="button"><i class="bi bi-file-earmark-pdf"></i> présentation</a> 
         </div>
       </div>
-      <div class="col-2 lieu">
+      <div class="col-6 col-sm-2 order-2 order-sm-3 lieu">
         Palaiseau
       </div>
     </div>
@@ -154,26 +190,58 @@
   <div class="container">
     <!--
     <div class="row">
-      <div class="col-1 date">
-        2025-2026
+      <div class="col-6 col-sm-1 order-1 order-sm-1 date">
+        2026
+        2025
       </div>
-      <div class="col-9">
-        <b>Master 2 Analyse, Modélisation, Simulation, <i>Institut Polytechnique de Paris</i></b>
-        <br>
+      <div class="col-12 col-sm-9 order-3 order-sm-2">
+        <div class="titre">
+          <b>Master 2 Analyse Modélisation Simulation, <i>Institut Polytechnique de Paris</i></b> (à venir)
+        </div>
         <span class="description">Master co-habilité avec l'Université Paris-Saclay</span>
+        <span class="d-inline-flex gap-1">
+          <a class="btn btn-outline-secondary btn-sm support" data-bs-toggle="collapse" href="#coursM2" role="button" aria-expanded="false" aria-controls="coursM2">
+            <i class="bi bi-card-list"></i> détail des cours
+          </a>
+        </span>      
+        <div class="collapse" id="coursM2">
+          <div class="card card-body description">
+            <div class="container">
+              <div class="row cours">
+                <div class="col">
+                  <b>Tronc commun</b>
+                  <ul>
+                    <li>Méthodes variationnelles pour l'analyse et la résolution de problèmes non coercifs</li>
+                    <li>Calcul scientifique parallèle</li>
+                    <li>Problèmes de diffraction en domaines non bornés</li>
+                    <li>Problèmes inverses pour des systèmes gouvernés par des EDPs</li>
+                    <li>Homogénéisation périodique</li>
+                  </ul>
+                  <b>Cours de spécialisation</b>
+                  <ul>
+                    <li>Modélisation mathématique et estimation en biomécanique cardiaque</li>
+                    <li>Des équations intégrales aux réseaux de neurones : méthodes numériques et algorithmiques avancées</li>
+                    <li>Modélisation, analyse et discrétisation d’un problème d’interaction fluide-structure</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-2 lieu">
-        Palaiseau
+      <div class="col-6 col-sm-2 order-2 order-sm-3 lieu">
+        Palaiseau / Orsay
       </div>
-    </div>  
-    -->  
+    </div> 
+    --> 
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-6 col-sm-1 order-1 order-sm-1 date">
         2024 2023
       </div>
-      <div class="col-9">
-        <b>Master 1 Mathématiques Appliquées, <i>Institut Polytechnique de Paris</i></b>
-        <br>
+      <div class="col-12 col-sm-9 order-3 order-sm-2">
+        <div class="titre">
+          <b>Master 1 Mathématiques Appliquées, <i>Institut Polytechnique de Paris</i></b>
+        </div>
         <span class="description">Master co-habilité avec l'Université Paris-Saclay</span>
         <span class="d-inline-flex gap-1">
           <a class="btn btn-outline-secondary btn-sm support" data-bs-toggle="collapse" href="#coursM1" role="button" aria-expanded="false" aria-controls="coursM1">
@@ -184,7 +252,8 @@
           <div class="card card-body description">
             <div class="container">
               <div class="row cours">
-                <div class="col">
+                <div class="col-12 col-md-6">
+                  <b>Cours d'orientation</b>
                   <ul>
                     <li>Analyse fonctionnelle</li>
                     <li>Théorie spectrale des opérateurs autoadjoints</li>
@@ -194,7 +263,8 @@
                     <li>Initiation au calcul haute performance</li>
                   </ul>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-6">
+                  <b>Tronc commun</b>
                   <ul>
                     <li>Commande des systèmes</li>
                     <li>Optimisation différentiable (théorie et algo.)</li>
@@ -209,33 +279,35 @@
           </div>
         </div>
       </div>
-      <div class="col-2 lieu">
+      <div class="col-6 col-sm-2 order-2 order-sm-3 lieu">
         Palaiseau
       </div>
     </div>
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-6 col-sm-1 order-1 order-sm-1 date">
         2026 2022
       </div>
-      <div class="col-9">
-        <b>Diplôme d’ingénieur, <i><span class="capitales">ensta</span> <span class="capitales">p</span>aris - Institut Polytechnique de Paris</i></b>
-        <br>
+      <div class="col-12 col-sm-9 order-3 order-sm-2">
+        <div class="titre">
+          <b>Diplôme d’ingénieur, <i><span class="capitales">ensta</span> <span class="capitales">p</span>aris - Institut Polytechnique de Paris</i></b>
+        </div>
         <span class="description">Spécialisation <i>Ingénierie mathématique - <a href="https://synapses.ensta-paris.fr/catalogue/parcours/44/3A-PAR-AMS-3a-parcours-modelisation-et-simulation" class="lien">Modélisation et Simulation</a></i></span>
       </div>
-      <div class="col-2 lieu">
+      <div class="col-6 col-sm-2 order-2 order-sm-3 lieu">
         Palaiseau
       </div>
     </div>
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-6 col-sm-1 order-1 order-sm-1 date">
         2022 2020
       </div>
-      <div class="col-9">
-        <b>Classes préparatoires aux grandes écoles, <i>Collège Stanislas</i></b>
-        <br>
+      <div class="col-12 col-sm-9 order-3 order-sm-2">
+        <div class="titre">
+          <b>Classes préparatoires aux grandes écoles, <i>Collège Stanislas</i></b>
+        </div>
         <span class="description">Filière <i>Physique et Sciences de l'Ingénieur</i></span>
       </div>
-      <div class="col-2 lieu">
+      <div class="col-6 col-sm-2 order-2 order-sm-3 lieu">
         Paris
       </div>
     </div>
@@ -245,51 +317,62 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-12 col-sm-1 date">
         depuis 2022
       </div>
-      <div class="col-11">
-        <b>Rédaction d'un recueil d'exercices de mathématiques</b>
+      <div class="col-12 col-sm-11">
+        <div class="titre">
+          <b>Rédaction d'un recueil d'exercices de mathématiques <span class="capitales">psi/pc</span></b>
         <a class="btn btn-outline-secondary btn-sm support" href="https://github.com/armandwayoff/RECM" role="button"><i class="bi bi-github"></i> code source</a> 
         <!--<a class="btn btn-outline-secondary btn-sm support" href="" role="button"><i class="bi bi-file-earmark-pdf"></i> pdf</a>-->
-        <br>
+        </div>
         <div class="description">
           Recueil d'exercices classiques de mathématiques de niveau classes préparatoires, agrémenté d’illustrations, de remarques, de méthodes et de notes historiques
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-12 col-sm-1 date">
         2024 2023
       </div>
-      <div class="col-11">
-        <b>Réalisation de figures pour le <a href="https://ensta-paris.hal.science/hal-03243924v3/document" class="lien">polycopié du cours <span class="capitales">aot</span>13 de l'<span class="capitales">ensta</span> <span class="capitales">p</span>aris - <i>Géométrie Différentielle et Application au Contrôle Géométrique</i></a> de Frédéric <span class="capitales">Jean</span></b>
+      <div class="col-12 col-sm-11">
+        <div class="titre">
+          <b>Réalisation de figures pour le <a href="https://ensta-paris.hal.science/hal-03243924v3/document" class="lien">cours <i>Géométrie Différentielle et Application au Contrôle Géométrique</i></a> de Frédéric <span class="capitales">Jean</span></b>
+        </div>
+        <div class="description">
+          Figures réalisées avec <i>Inkscape</i> pour l'enseignement thématique <a href="https://synapses.ensta-paris.fr/catalogue/2023-2024/ue/22/AOT13-geometrie-differentielle-et-application-au-controle-geometrique?from=P3094"><span class="capitales">aot</span>13</a> de première année de l'<span class="capitales">ensta</span> <span class="capitales">p</span>aris
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-12 col-sm-1 date">
         2023 2022
       </div>
-      <div class="col-11">
-        <b>Challenge Intelligence répartie <span class="capitales">aid-cieds</span> (Finaliste)</b>
+      <div class="col-12 col-sm-11">
+        <div class="titre">
+          <b>Challenge Intelligence répartie <span class="capitales">aid-cieds</span> (Finaliste)</b>
         <a class="btn btn-outline-secondary btn-sm support" href="https://emmanuel-battesti.github.io/swarm-rescue-website/" role="button"><i class="bi bi-box-arrow-up-right"></i> site de la compétition</a> 
         <a class="btn btn-outline-secondary btn-sm support" href="swarm_rescue.pdf" role="button"><i class="bi bi-file-earmark-pdf"></i> présentation de soutenance</a> 
-        <br>
+        </div>
         <div class="description">Concours organisé par le <a href='https://www.ip-paris.fr/recherche/centres-interdisciplinaires/cieds-centre-interdisciplinaire-detudes-pour-la-defense-et-la-securite' class="lien"><span class="capitales">cieds</span></a> (Centre Interdisciplinaire d’Études pour la Défense et la Sécurité) de l'<span class="capitales">ip</span> <span class="capitales">p</span>aris et par l’<a href='https://www.defense.gouv.fr/aid' class="lien"><span class="capitales">aid</span></a> (Agence de l’Innovation de Défense). 
         Ce challenge vise à promouvoir auprès des étudiants les thématiques de l'intelligence artificielle pour les systèmes multi-robots ou multi-drones, une thématique essentielle en matière de défense et de sécurité civile.
         </div>
       </div>
     </div>
-    <!--
     <div class="row">
-      <div class="col-1 date">
+      <div class="col-12 col-sm-1 date">
         2023
       </div>
-      <div class="col-11">
-        <b>Retranscriptions des compositions du concours 1971 de l'École polytechnique</b>
+      <div class="col-12 col-sm-11">
+        <div class="titre">
+          <b>Retranscriptions des compositions du concours 1971 de l'École polytechnique</b>
+        <!--<a class="btn btn-outline-secondary btn-sm support" href="" role="button"><i class="bi bi-box-arrow-up-right"></i></a>-->
+        </div>
+        <div class="description">
+          À partir de fichiers numériques d'images fournis sur demande spéciale par le <a href="https://www.polytechnique.edu/bibliotheque/patrimoine/centre-de-ressources-historiques-crh"><i>Centre de ressources historiques</i></a> de la Bibliothèque centrale de l'X
+        </div>
       </div>
     </div>
-    -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
