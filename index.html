@@ -64,16 +64,11 @@
           direction: rtl;
           color: var(--bs-secondary);
           line-height: normal;
+          padding-right: 0px;
         }
 
-        .date-mois {
-          display: inline;
-          direction: rtl;
-        }
-
-        .nb-mois {
-          display: inline;
-          direction: ltr;
+        .date {
+          white-space: nowrap;
         }
 
         @media only screen and (max-width: 576px) {
@@ -83,6 +78,13 @@
           .date-exp {
             text-align: left;
             direction: ltr;
+          }
+        }
+
+        .nav {
+          margin-bottom: 20px;
+          a {
+            color: rgb(0, 0, 200);
           }
         }
 
@@ -118,6 +120,23 @@
 </head>
   <body>
 
+  <!--
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="#experience">Expérience</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#formation">Formation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#projets">Projets</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#enseignement">Enseignement</a>
+    </li>
+  </ul>
+  -->
+
   <div class="reseaux">
     <h2><b>Armand <span class="capitales">Wayoff</span></b></h2>
     <div>
@@ -131,17 +150,16 @@
   
   <hr>
   
-  <h5>Expérience</h5>
+  <h5 id="experience">Expérience</h5>
   <div class="container">
     <div class="row">
       <div class="col-6 col-sm-1 order-1 order-sm-1 date-exp">
         <div class="date-mois">
-          &nbsp;01/2025
-          09/2024
+          sept.&nbsp;2024 à&nbsp;janv.&nbsp;2025
         </div>
-        <div class="nb-mois"> 
+        <!--<div class="nb-mois"> 
           (5&nbsp;mois)
-        </div>
+        </div>-->
       </div>
       <div class="col-12 col-sm-9 order-3 order-sm-2">
         <div class="titre">
@@ -163,10 +181,9 @@
     <div class="row">
       <div class="col-6 col-sm-1 order-1 order-sm-1 date-exp">
         <div class="date-mois">
-          &nbsp;08/2024
-          05/2024
+          mai&nbsp;à août&nbsp;2024
         </div>
-        <div class="nb-mois">(3&nbsp;mois)</div>
+        <!--<div class="nb-mois">(3&nbsp;mois)</div>-->
       </div>
       <div class="col-12 col-sm-9 order-3 order-sm-2">
         <div class="titre">
@@ -186,11 +203,11 @@
     </div>
   </div>
   
-  <h5>Formation</h5>
+  <h5 id="formation">Formation</h5>
   <div class="container">
     <div class="row">
       <div class="col-6 col-sm-1 order-1 order-sm-1 date">
-        2026 2022
+        2026&#8211;2022
       </div>
       <div class="col-12 col-sm-9 order-3 order-sm-2">
         <div class="titre">
@@ -204,12 +221,11 @@
     </div>
     <div class="row">
       <div class="col-6 col-sm-1 order-1 order-sm-1 date">
-        2026
-        2025
+        2026&#8211;2025
       </div>
       <div class="col-12 col-sm-9 order-3 order-sm-2">
         <div class="titre">
-          <b>Master 2 Analyse Modélisation Simulation, <i>Institut Polytechnique de Paris</i></b>
+          <b><a href="https://www.ip-paris.fr/education/masters/mention-mathematiques-et-applications/master-2-analyse-modelisation-simulation">Master 2 Analyse, Modélisation, Simulation</a>, <i>Institut Polytechnique de Paris</i></b>
         </div>
         <span class="description">Master co-habilité avec l'Université Paris-Saclay</span>
         <span class="d-inline-flex gap-1">
@@ -243,7 +259,7 @@
     </div> 
     <div class="row">
       <div class="col-6 col-sm-1 order-1 order-sm-1 date">
-        2024 2023
+        2024&#8211;2023
       </div>
       <div class="col-12 col-sm-9 order-3 order-sm-2">
         <div class="titre">
@@ -292,7 +308,7 @@
     </div>
     <div class="row">
       <div class="col-6 col-sm-1 order-1 order-sm-1 date">
-        2022 2020
+        2022&#8211;2020
       </div>
       <div class="col-12 col-sm-9 order-3 order-sm-2">
         <div class="titre">
@@ -306,7 +322,7 @@
     </div>
   </div>
 
-  <h5>Projets</h5>
+  <h5 id="projets">Projets</h5>
 
   <div class="container">
     <div class="row">
@@ -326,7 +342,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-sm-1 date">
-        2024 2023
+        2024&#8211;2023
       </div>
       <div class="col-12 col-sm-11">
         <div class="titre">
@@ -334,21 +350,6 @@
         </div>
         <div class="description">
           Figures réalisées avec <i>Inkscape</i> pour l'enseignement thématique <a href="https://synapses.ensta-paris.fr/catalogue/2023-2024/ue/22/AOT13-geometrie-differentielle-et-application-au-controle-geometrique?from=P3094"><span class="capitales">aot</span>13</a> de première année de l'<span class="capitales">ensta</span> <span class="capitales">p</span>aris
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-sm-1 date">
-        2023 2022
-      </div>
-      <div class="col-12 col-sm-11">
-        <div class="titre">
-          <b>Challenge Intelligence répartie <span class="capitales">aid-cieds</span> (Finaliste)</b>
-        <a class="btn btn-outline-secondary btn-sm support" href="https://emmanuel-battesti.github.io/swarm-rescue-website/" role="button"><i class="bi bi-box-arrow-up-right"></i> site de la compétition</a> 
-        <a class="btn btn-outline-secondary btn-sm support" href="swarm_rescue.pdf" role="button"><i class="bi bi-file-earmark-pdf"></i> présentation de soutenance</a> 
-        </div>
-        <div class="description">Concours organisé par le <a href='https://www.ip-paris.fr/recherche/centres-interdisciplinaires/cieds-centre-interdisciplinaire-detudes-pour-la-defense-et-la-securite' class="lien"><span class="capitales">cieds</span></a> (Centre Interdisciplinaire d’Études pour la Défense et la Sécurité) de l'<span class="capitales">ip</span> <span class="capitales">p</span>aris et par l’<a href='https://www.defense.gouv.fr/aid' class="lien"><span class="capitales">aid</span></a> (Agence de l’Innovation de Défense). 
-        Ce challenge vise à promouvoir auprès des étudiants les thématiques de l'intelligence artificielle pour les systèmes multi-robots ou multi-drones, une thématique essentielle en matière de défense et de sécurité civile.
         </div>
       </div>
     </div>
@@ -363,6 +364,64 @@
         </div>
         <div class="description">
           À partir de fichiers numériques d'images fournis sur demande spéciale par le <a href="https://www.polytechnique.edu/bibliotheque/patrimoine/centre-de-ressources-historiques-crh"><i>Centre de ressources historiques</i></a> de la Bibliothèque centrale de l'X
+          <br>
+          <a class="btn btn-outline-secondary btn-sm support" href="x1971_maths1.pdf" role="button"><i class="bi bi-file-earmark-pdf"> </i>Mathématiques 1</a>
+          <a class="btn btn-outline-secondary btn-sm support" href="x1971_maths2.pdf" role="button"><i class="bi bi-file-earmark-pdf"> </i>Mathématiques 2</a>
+          <a class="btn btn-outline-secondary btn-sm support" href="x1971_calculnum.pdf" role="button"><i class="bi bi-file-earmark-pdf"> </i>Calcul numérique</a>
+          <!--
+          <span class="d-inline-flex gap-1">
+            <a class="btn btn-outline-secondary btn-sm support" data-bs-toggle="collapse" href="#sujetsX" role="button" aria-expanded="false" aria-controls="sujetsX">
+              <i class="bi bi-card-list"></i> sujets
+            </a>
+          </span>      
+          <div class="collapse" id="sujetsX">
+            <div class="card card-body description">
+              <div class="container">
+                <div class="row cours">
+                  <div class="col-12 col-md-6">
+                    <a class="btn btn-outline-secondary btn-sm support" href="x1971_maths1.pdf" role="button"><i class="bi bi-file-earmark-pdf"> </i>Mathématiques 1</a>
+                    <a class="btn btn-outline-secondary btn-sm support" href="x1971_maths2.pdf" role="button"><i class="bi bi-file-earmark-pdf"> </i>Mathématiques 2</a>
+                    <a class="btn btn-outline-secondary btn-sm support" href="x1971_calculnum.pdf" role="button"><i class="bi bi-file-earmark-pdf"> </i>Calcul numérique</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-1 date">
+        2023&#8211;2022
+      </div>
+      <div class="col-12 col-sm-11">
+        <div class="titre">
+          <b>Challenge Intelligence répartie <span class="capitales">aid-cieds</span> (Finaliste)</b>
+        <a class="btn btn-outline-secondary btn-sm support" href="https://emmanuel-battesti.github.io/swarm-rescue-website/" role="button"><i class="bi bi-box-arrow-up-right"></i> site de la compétition</a> 
+        <a class="btn btn-outline-secondary btn-sm support" href="swarm_rescue.pdf" role="button"><i class="bi bi-file-earmark-pdf"></i> présentation de soutenance</a> 
+        </div>
+        <div class="description">Concours organisé par le <a href='https://www.ip-paris.fr/recherche/centres-interdisciplinaires/cieds-centre-interdisciplinaire-detudes-pour-la-defense-et-la-securite' class="lien"><span class="capitales">cieds</span></a> (Centre Interdisciplinaire d’Études pour la Défense et la Sécurité) de l'<span class="capitales">ip</span> <span class="capitales">p</span>aris et par l’<a href='https://www.defense.gouv.fr/aid' class="lien"><span class="capitales">aid</span></a> (Agence de l’Innovation de Défense). 
+        Ce challenge vise à promouvoir auprès des étudiants les thématiques de l'intelligence artificielle pour les systèmes multi-robots ou multi-drones, une thématique essentielle en matière de défense et de sécurité civile.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5 id="enseignement">Enseignement</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-1 date">
+        2023
+      </div>
+      <div class="col-12 col-sm-11">
+        <div class="titre">
+          <b>Tuteur en ligne en mathématiques et physique pour le <a href="https://www.ip-paris.fr/propos/centre-egalite-des-chances/programme-de-tutorat-en-ligne">programme #<span class="capitales">genius</span></a> (<span class="capitales">ip p</span>aris, <span class="capitales">hec p</span>aris et Centrale Lyon)</b>
+        </div>
+        <div class="description">
+          #<span class="capitales">genius</span> est un programme de tutorat en ligne s’appuyant sur le numérique pour lutter contre les inégalités géographiques d’accès aux filières scientifiques.
+          Préparation et animation de séances de tutorat en ligne à destination d'élèves de terminale autour de quatre thématiques : culture générale et scientifique, expression orale, méthodologie et partage d’expériences.
         </div>
       </div>
     </div>
